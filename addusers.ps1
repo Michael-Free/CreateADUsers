@@ -43,7 +43,6 @@ if (-not $((Get-Module).Name | Where-Object { $_ -eq 'ActiveDirectory' })) {
 
 Import-Module -Name ActiveDirectory
 
-$importedUser = @()
 $failedUsers = @()
 
 Import-Csv $CsvPath  | ForEach-Object {
@@ -70,11 +69,11 @@ Import-Csv $CsvPath  | ForEach-Object {
     ChangePasswordAtLogon = $false
   }
 
-  Write-Output @splat
-  # try {
-  #   New-ADUser @splat
-  # }
-  # catch {
-  #   #
-  # }
+  try {
+    New-ADUser @splat
+  }
+  catch {
+    $failedUsers.Add($splat)
+  }
 }
+
