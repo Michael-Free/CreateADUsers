@@ -29,6 +29,9 @@ None. This script performs operations but does not return output.
 - The Active Directory module must be installed on the system.
 - The script validates the input CSV path and ensures the domain matches FQDN format.
 
+Author: Michael Free  
+Copyright: (c) 2024 Michael Free. All rights reserved.
+
 .LINK
 https://github.com/Michael-Free/CreateADUsers/blob/main/README.md
 
