@@ -69,7 +69,7 @@ $fullPath = "CN=Users,$domainName"
 
 Import-Module -Name ActiveDirectory
 
-$failedUsers = [System.Collections.ArrayList]@()
+$failedUsers = @()
 
 Import-Csv $CsvPath  | ForEach-Object {
   $securePassword = $_.AccountPassword | ConvertTo-SecureString -AsPlainText -Force
@@ -99,8 +99,16 @@ Import-Csv $CsvPath  | ForEach-Object {
     New-ADUser @splat
   }
   catch {
-    $null = $failedUsers.Add($_)
+    $failedUsers += [PSCustomObject]@{
+      User  = $_.SamAccountName
+      Error = $_.Exception.Message
+    }
   }
 }
-
-
+if ($failedUsers.Count -gt 0) {
+  Write-Output 'Some users failed to create:'
+  $failedUsers | Format-Table -AutoSize
+}
+else {
+  Write-Output 'All users created successfully!'
+}
