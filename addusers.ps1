@@ -3,8 +3,8 @@
 Creates Active Directory user accounts from a CSV file.
 
 .DESCRIPTION
-This script imports a list of user account details from a CSV file and creates corresponding Active Directory user accounts. 
-It validates prerequisites, including administrative privileges, operating system type, and input data formats, before attempting 
+This script imports a list of user account details from a CSV file and creates corresponding Active Directory user accounts.
+It validates prerequisites, including administrative privileges, operating system type, and input data formats, before attempting
 to create accounts. Accounts are created with attributes such as display name, email address, department, and more.
 
 .PARAMETER CsvPath
@@ -57,7 +57,7 @@ if (-not (Test-Path -Path $CsvPath -PathType Leaf)) {
   throw "The specified file '$CsvPath' does not exist."
 }
 
-$fqdnRegex = '^(?=.{1,255}$)([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}$'
+$fqdnRegex = '^(?=.{1,255}$)([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}$'     
 
 if ($Domain -notmatch $fqdnRegex) {
   throw "Domain Name doesn't match FQDN format"
@@ -67,18 +67,9 @@ $dnParts = $Domain -split '\.' | ForEach-Object { "DC=$_" }
 $domainName = $dnParts -join ','
 $fullPath = "CN=Users,$domainName"
 
-if (-not $((Get-Module).Name | Where-Object { $_ -eq 'ActiveDirectory' })) {
-  try {
-    Install-Module -Name 'ActiveDirectory' -Force
-  }
-  catch {
-    throw 'Error installing ActiveDirectory Module'
-  }
-}
-
 Import-Module -Name ActiveDirectory
 
-$failedUsers = @()
+$failedUsers = [System.Collections.ArrayList]@()
 
 Import-Csv $CsvPath  | ForEach-Object {
   $securePassword = $_.AccountPassword | ConvertTo-SecureString -AsPlainText -Force
@@ -86,7 +77,7 @@ Import-Csv $CsvPath  | ForEach-Object {
     Name                  = $_.DisplayName
     SamAccountName        = $_.SamAccountName
     DisplayName           = $_.DisplayName
-    UserPrincipalName     = "$($_.SamAccountName)@$domainName"
+    UserPrincipalName     = "$($_.SamAccountName)@$Domain"
     EmailAddress          = $_.EmailAddress
     Company               = $_.Company
     Department            = $_.Department
@@ -108,7 +99,8 @@ Import-Csv $CsvPath  | ForEach-Object {
     New-ADUser @splat
   }
   catch {
-    $failedUsers.Add($splat)
+    $null = $failedUsers.Add($_)
   }
 }
+
 
