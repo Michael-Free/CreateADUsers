@@ -1,3 +1,21 @@
+<#
+.SYNOPSIS
+
+.DESCRIPTION
+
+.PARAMETER
+
+.EXAMPLE
+
+.INPUTS
+
+.OUTPUTS
+
+.NOTES
+
+.LINK
+
+#>
 param(
   [Parameter(Mandatory = $true)]
   [string]$CsvPath,
