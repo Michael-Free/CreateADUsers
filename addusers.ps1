@@ -108,6 +108,7 @@ Import-Csv $CsvPath  | ForEach-Object {
     }
   }
 }
+
 if ($failedUsers.Count -gt 0) {
   Write-Output 'Some users failed to create:'
   $failedUsers | Format-Table -AutoSize
