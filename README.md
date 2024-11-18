@@ -17,8 +17,20 @@ The generated user data is stored in a list, which is then written to a CSV file
 
 This script prompts the user for the number of users to generate and ensures that no two users have the same SamAccountName. This makes sure that there are no issues when bulk importing these accounts.
 
-### Dependencies:
+### Dependencies
 - `faker`: A library to generate random names and sentences.
 - `random`: Used for generating random job titles, office locations, and password components.
 - `string`: For generating password characters.
 - `os`: Used for file operations (checking and removing the existing CSV file).
+
+### Usage
+
+## addusers.ps1
+
+### Description
+
+### Dependencies
+
+### Usage
+
+## Releases
