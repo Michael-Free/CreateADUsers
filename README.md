@@ -25,7 +25,7 @@ This script prompts the user for the number of users to generate and ensures tha
 
 ### Usage
 ```
-..
+python createusers.py
 ```
 
 ## addusers.ps1
