@@ -36,6 +36,10 @@ It validates prerequisites, including administrative privileges, operating syste
 to create accounts. Accounts are created with attributes such as display name, email address, department, and more.
 
 ### Dependencies
+- `ActiveDirectory`: A PowerShell module that allows you to automate and manage Active Directory objects (users, groups, computers, and domains)
+- Windows Server OS: This is needed since this script manages Active Directory and is only available on Windows Server.
+- Active Directory Domain Controller: manages authentication, authorization, and directory services within a Windows domain, serving as the backbone for centralized user and resource management.
+- Administrative Privileges: The user running this script needs to have admin priviliges because it is modifying active directory and creating new user accounts.
 
 ### Usage
 ```
