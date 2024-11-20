@@ -24,6 +24,9 @@ This script prompts the user for the number of users to generate and ensures tha
 - `os`: Used for file operations (checking and removing the existing CSV file).
 
 ### Usage
+```
+..
+```
 
 ## addusers.ps1
 
@@ -35,5 +38,8 @@ to create accounts. Accounts are created with attributes such as display name, e
 ### Dependencies
 
 ### Usage
+```
+.\addusers.ps1 -CsvPath "random_users.csv" -Domain "example.com"
+```
 
 ## Releases
