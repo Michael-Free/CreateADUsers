@@ -28,6 +28,9 @@ This script prompts the user for the number of users to generate and ensures tha
 ## addusers.ps1
 
 ### Description
+This script imports a list of user account details from a CSV file and creates corresponding Active Directory user accounts.
+It validates prerequisites, including administrative privileges, operating system type, and input data formats, before attempting
+to create accounts. Accounts are created with attributes such as display name, email address, department, and more.
 
 ### Dependencies
 
