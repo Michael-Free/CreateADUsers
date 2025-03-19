@@ -1,6 +1,8 @@
 # CreateADUsers
 
-CreateADUsers provides a powerful framework generating and deploying test user data in an Active Directory environment.  They save time, reduce errors, and provide flexibility for testers, IT departments, and homelabbers alike. Whether you're testing a new system, onboarding employees, or experimenting in a homelab, these scripts are a valuable tool for managing user data efficiently.
+CreateADUsers provides a powerful framework generating and deploying test user data in an Active Directory environment. These scripts save time, reduce errors, and provide flexibility for testers, IT departments, and homelabbers alike. 
+
+Whether you're testing a new system, onboarding employees, or experimenting in a homelab, these scripts are a valuable tool for managing user data efficiently.
 
 ## Prerequisites
 - Active Directory Environment:
@@ -95,7 +97,9 @@ jsmith     The specified user already exists
 ```
 
 ## License
+
 Free Custom License (FCL) v1.0
+
 Copyright 2025, Michael Free. All Rights Reserved.
 
 ## Contributions
