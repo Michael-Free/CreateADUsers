@@ -26,9 +26,9 @@ Description:
     file named 'random_users.csv' for importing later by a powershell script.
     This file is generated in whatever directory the script is stored in.
 
-    This script prompts the user for the number of users to generate and ensures 
-    that no two users have the same SamAccountName. This makes sure that there
-    are no issues when bulk importing these accounts.
+    This script takes an integer argument specifying the number of users to 
+    generate and ensures that no two users have the same SamAccountName. This 
+    makes sure that there are no issues when bulk importing these accounts.
 
 Dependencies:
     - `faker`: A library to generate random names and sentences.
