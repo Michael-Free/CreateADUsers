@@ -14,7 +14,7 @@ The path to the CSV file containing the user data. Each row in the file represen
 The fully qualified domain name (FQDN) of the target Active Directory domain where the accounts will be created.
 
 .EXAMPLE
-.\Create-ADUsers.ps1 -CsvPath "C:\Users.csv" -Domain "example.com"
+.\addusers.ps1 -CsvPath "C:\Users.csv" -Domain "example.com"
 This example creates user accounts in the "example.com" domain using the user data from "C:\Users.csv".
 
 .INPUTS

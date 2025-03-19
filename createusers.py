@@ -36,7 +36,7 @@ Dependencies:
     - `string`: For generating password characters.
     - `os`: Used for file operations (checking and removing the existing CSV file).
 """
-
+import sys
 import random
 import string
 import os
@@ -233,12 +233,11 @@ if __name__ == "__main__":
         "".join(e for e in FAKE_COMPANY if e.isalnum()) + str(".com")
     ).lower()
 
-    while True:
-        try:
-            users_to_create = int(input("How many users to create? "))
-            break
-        except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+    try:
+        users_to_create = int(sys.argv[1])
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+        sys.exit(1)
 
     user_array = []
 
