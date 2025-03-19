@@ -34,7 +34,9 @@ The script will create a CSV file called "random_users.csv" in the current worki
 You can open this file using a spreadsheet program or other tool to view and manipulate the data.
 
 ### addusers.ps1
-This PowerShell script automates the creation of Active Directory (AD) user accounts from a CSV file. It ensures the script is executed with administrative privileges and on a Windows Server system before proceeding. The script validates the provided domain name and CSV file, then imports user data to create AD accounts with the specified attributes.
+This script imports a list of user account details from a CSV file and creates corresponding Active Directory user accounts.
+It validates prerequisites, including administrative privileges, operating system type, and input data formats, before attempting
+to create accounts. Accounts are created with attributes such as display name, email address, department, and more.
 
 #### Dependencies
 
@@ -57,6 +59,7 @@ All users created successfully!
 ```
 
 If some users fail to create:
+
 ```
 Some users failed to create:
 User       Error
@@ -76,10 +79,10 @@ Copyright (c) 2025, Michael Free
 
 If you encounter any issues while using the tool, please report them in the issue tracker on GitHub. Be sure to include the following information in your bug report:
 
-    - The steps to reproduce the issue
-    - The expected behavior
-    - The actual behavior
-    - Any error messages or stack traces associated with the issue
+- The steps to reproduce the issue
+- The expected behavior
+- The actual behavior
+- Any error messages or stack traces associated with the issue
 
 ### Requesting Features
 
