@@ -27,7 +27,7 @@
 .NOTES
   Author      : Michael Free
   Date        : 2025-03-19
-  License     : BSD 3-Clause License
+  License     : Free Custom License (FCL) v1.0
   Copyright   : 2025, Michael Free. All Rights Reserved.
   Requires    : Active Directory module
 

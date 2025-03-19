@@ -95,10 +95,8 @@ jsmith     The specified user already exists
 ```
 
 ## License
-
-BSD 3-Clause License
-
-Copyright (c) 2025, Michael Free
+Free Custom License (FCL) v1.0
+Copyright 2025, Michael Free. All Rights Reserved.
 
 ## Contributions
 
