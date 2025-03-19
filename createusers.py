@@ -35,6 +35,13 @@ Dependencies:
     - `random`: Used for generating random job titles, office locations, and password components.
     - `string`: For generating password characters.
     - `os`: Used for file operations (checking and removing the existing CSV file).
+
+Copyright & License:
+  Author      : Michael Free
+  Date        : 2025-03-19
+  License     : Free Custom License (FCL) v1.0
+  Copyright   : 2025, Michael Free. All Rights Reserved.
+  Requires    : Active Directory module
 """
 import sys
 import random
