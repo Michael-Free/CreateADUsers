@@ -1,39 +1,38 @@
 <#
 .SYNOPSIS
-Creates Active Directory user accounts from a CSV file.
+  Creates Active Directory user accounts from a CSV file.
 
 .DESCRIPTION
-This script imports a list of user account details from a CSV file and creates corresponding Active Directory user accounts.
-It validates prerequisites, including administrative privileges, operating system type, and input data formats, before attempting
-to create accounts. Accounts are created with attributes such as display name, email address, department, and more.
+  This script imports a list of user account details from a CSV file and creates corresponding Active Directory user accounts.
+  It validates prerequisites, including administrative privileges, operating system type, and input data formats, before attempting
+  to create accounts. Accounts are created with attributes such as display name, email address, department, and more.
 
 .PARAMETER CsvPath
-The path to the CSV file containing the user data. Each row in the file represents a user and must contain the required fields.
+  The path to the CSV file containing the user data. Each row in the file represents a user and must contain the required fields.
 
 .PARAMETER Domain
-The fully qualified domain name (FQDN) of the target Active Directory domain where the accounts will be created.
+  The fully qualified domain name (FQDN) of the target Active Directory domain where the accounts will be created.
 
 .EXAMPLE
-.\addusers.ps1 -CsvPath "C:\Users.csv" -Domain "example.com"
-This example creates user accounts in the "example.com" domain using the user data from "C:\Users.csv".
+  .\addusers.ps1 -CsvPath "C:\Users.csv" -Domain "example.com"
+  This example creates user accounts in the "example.com" domain using the user data from "C:\Users.csv".
 
 .INPUTS
-[string]$CsvPath
-[string]$Domain
+  [string]$CsvPath
+  [string]$Domain
 
 .OUTPUTS
-None. This script performs operations but does not return output.
+  None. This script performs operations but does not return output.
 
 .NOTES
-- Ensure the script is run with administrative privileges.
-- The Active Directory module must be installed on the system.
-- The script validates the input CSV path and ensures the domain matches FQDN format.
-
-Author: Michael Free  
-Copyright: (c) 2024 Michael Free. All rights reserved.
+  Author      : Michael Free
+  Date        : 2025-03-19
+  License     : BSD 3-Clause License
+  Copyright   : 2025, Michael Free. All Rights Reserved.
+  Requires    : Active Directory module
 
 .LINK
-https://github.com/Michael-Free/CreateADUsers/blob/main/README.md
+  https://github.com/Michael-Free/CreateADUsers/blob/main/README.md
 
 #>
 param(
