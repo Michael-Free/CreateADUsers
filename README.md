@@ -22,7 +22,20 @@ Whether you're testing a new system, onboarding employees, or experimenting in a
     - Familiarity with PowerShell and Python scripting.
     - Understanding of Active Directory user management concepts.
 
-Installation
+## Installation
+
+There are two ways to install the `CreateADUsers` repository:
+
+1. Direct Repository Sources 
+- Clone this repository using Git or download the ZIP file.
+- Extract the contents of the ZIP file to a directory on your computer. 
+- Open PowerShell as an administrator and navigate to the directory where you extracted the repo files. 
+- Run the respective `createusers.py` and `addusers.ps1` scripts.
+
+2. Download Official Releases from GitHub
+- Navigate to the latest release on Github by clicking on Releases (or by [clicking here](https://github.com/Michael-Free/CreateADUsers/releases)) .
+- Download `addusers.exe` and `createusers.exe`
+- Run these respective binary files via your terminal of choice.
 
 ## Usage
 
