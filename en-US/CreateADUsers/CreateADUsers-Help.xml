@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<helpItems xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" schema="maml" xmlns="http://msh">
+  <command:command>
+    <command:details>
+      <command:name>New-TestADUser</command:name>
+      <maml:description>
+        <maml:para>Creates multiple test Active Directory users with unique random data and comprehensive logging.</maml:para>
+      </maml:description>
+      <command:verb>New</command:verb>
+      <command:noun>TestADUser</command:noun>
+    </command:details>
+    <maml:description>
+      <maml:para>The New-TestADUser function automates the creation of test users in Active Directory. It performs comprehensive pre-validation of the environment (PowerShell version, operating system, domain controller status), generates unique random user data, resolves naming conflicts with existing AD users, adds required AD properties, and creates the users with detailed logging. The function automatically handles duplicate SamAccountName values by appending incremental numbers and generates a log file with user credentials.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-TestADUser</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="none">
+          <maml:name>Amount</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of test Active Directory users to create.
+This parameter is mandatory and must be an integer greater than or equal to 1.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">System.Int32</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="none">
+        <maml:name>Amount</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of test Active Directory users to create.
+This parameter is mandatory and must be an integer greater than or equal to 1.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">System.Int32</command:parameterValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <dev:name>System.Int32</dev:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an integer value to this function representing the number of test users to create.
+
+{{ Fill in the Description }}</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <dev:name>None. This function does not return objects to the pipeline. Instead</dev:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>{{ Fill in the Description }}</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Author: Michael Free
+Date Created: February 23, 2024
+Module Name: CreateADUsers
+
+This function performs the following operations in sequence:
+1.
+Validates PowerShell version is 7 or higher
+2.
+Validates operating system is Windows Server domain controller
+3.
+Generates the requested number of unique random user objects
+4.
+Checks for SamAccountName conflicts with existing AD users
+5.
+Resolves conflicts by appending incremental numbers (e.g., jsmith, jsmith1, jsmith2)
+6.
+Adds required AD properties (Company, EmailAddress, Path, Enabled, ChangePasswordAtLogon)
+7.
+Creates a timestamped log file in the current directory
+8.
+Creates each user in Active Directory with comprehensive error handling
+9.
+Logs successful creations with passwords and failed attempts with error details
+
+Log File Format:
+- Filename: NewTestADUsers-DD-MM-YYYY-HH.mm.ss.txt
+- Success entries: "Created username - Password: password"
+- Failure entries: "Failed to create username - [JSON data] - Error: error message"
+
+The function requires the Active Directory PowerShell module and appropriate permissions to create users in the domain.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>New-TestADUser -Amount 50
+Get-Content -Path .\NewTestADUsers-*.txt</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>Creates 50 test users and then displays the most recent log file containing usernames and passwords.</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>
