@@ -68,7 +68,7 @@ In the directory that this is command is ran from, there will be a log file crea
 
 ## Module Information
 
-- Version: v2.0.17
+- Version: v2.0.26
 - Author: Michael Free
 - License: See LICENSE file
 - Project URL: https://github.com/Michael-Free/CreateADUsers

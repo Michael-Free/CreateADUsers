@@ -9,7 +9,7 @@ The Get-RandomUserData function generates comprehensive random user information 
 This function does not accept any parameters.
 
 .INPUTS
-None. This function does not accept pipeline input..
+None. This function does not accept pipeline input...
 
 .OUTPUTS
 System.Management.Automation.PSCustomObject

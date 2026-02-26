@@ -17,7 +17,7 @@ Returns a custom object containing the following properties:
 - Fqdn: The fully qualified domain name (DNS root)
 - BiosName: The NetBIOS name of the domain
 - DistName: The distinguished name of the domain
-- UserCont: The distinguished name of the default users container
+- UserCont: The distinguished name of the default users container.
 
 .EXAMPLE
 Get-DomainControllerStatus

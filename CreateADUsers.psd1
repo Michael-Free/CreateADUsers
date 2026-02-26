@@ -12,7 +12,7 @@
 RootModule = 'CreateADUsers.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.0.17'
+ModuleVersion = '2.0.26'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -38,7 +38,7 @@ PowerShellVersion = '7.0'
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''
 
-# Minimum version of the PowerShell host required by this module
+# Minimum version of the PowerShell host required by this module.
 # PowerShellHostVersion = ''
 
 # Minimum version of Microsoft .NET Framework required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
